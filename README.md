@@ -2,7 +2,7 @@
 
 A Chrome browser extension that helps users block distracting websites during focused work sessions with customizable time schedules.
 
-*Testing CI/CD workflow and GitHub Pages deployment*
+*Testing CI/CD workflow and GitHub Pages deployment - Fixed workflow configuration*
 
 ## Features
 
