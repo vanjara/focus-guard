@@ -1,12 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 
-// Mock the background script class
-class MockFocusGuardBackground {
-  initializeListeners() {}
-  updateRules() {}
-  shouldBlockNow() {}
-  checkBlockStatus() {}
-}
+// Mock the background script class - will be implemented when needed
 
 describe('FocusGuard Background Script', () => {
   beforeEach(() => {
@@ -14,8 +8,6 @@ describe('FocusGuard Background Script', () => {
   })
 
   it('should handle message updates', () => {
-    const mockMessage = { action: 'updateRules' }
-    const mockSender = {}
     const mockSendResponse = vi.fn()
     
     // Test message handling

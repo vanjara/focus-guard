@@ -40,7 +40,7 @@ global.chrome = {
       addListener: vi.fn(),
     },
   },
-} as any
+} as Chrome
 
 // Mock console methods to reduce noise in tests
 global.console = {
