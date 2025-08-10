@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FocusGuard Options</title>
+    <link rel="stylesheet" href="options.css">
+    <link rel="icon" type="image/png" href="icons/icon-48.png">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <img src="icons/icon-48.png" alt="FocusGuard" class="header-logo">
+                <h1>FocusGuard Options</h1>
+                <p>Configure your website blocking preferences</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- General Settings -->
+            <section class="settings-section">
+                <h2>General Settings</h2>
+                <div class="setting-group">
+                    <div class="setting-item">
+                        <label class="setting-label">
+                            <input type="checkbox" id="enableExtension" class="setting-checkbox">
+                            <span class="setting-text">
+                                <strong>Enable FocusGuard</strong>
+                                <small>Master switch to enable/disable all blocking</small>
+                            </span>
+                        </label>
+                    </div>
+                    
+                    <div class="setting-item">
+                        <label class="setting-label">
+                            <input type="checkbox" id="showNotifications" class="setting-checkbox">
+                            <span class="setting-text">
+                                <strong>Show Notifications</strong>
+                                <small>Display notifications when websites are blocked</small>
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="setting-item">
+                        <label class="setting-label">
+                            <input type="checkbox" id="autoStart" class="setting-checkbox">
+                            <span class="setting-text">
+                                <strong>Auto-start on Browser Launch</strong>
+                                <small>Automatically enable blocking when Chrome starts</small>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Website Management -->
+            <section class="settings-section">
+                <h2>Website Management</h2>
+                <div class="setting-group">
+                    <div class="website-input-group">
+                        <input type="text" id="newWebsite" placeholder="Enter website (e.g., facebook.com)" class="website-input">
+                        <button id="addWebsite" class="btn btn-primary">Add Website</button>
+                    </div>
+                    
+                    <div class="website-list" id="websiteList">
+                        <!-- Websites will be populated here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Schedule Settings -->
+            <section class="settings-section">
+                <h2>Schedule Settings</h2>
+                <div class="setting-group">
+                    <div class="schedule-item">
+                        <label class="setting-label">
+                            <input type="checkbox" id="enableSchedule" class="setting-checkbox">
+                            <span class="setting-text">
+                                <strong>Enable Scheduled Blocking</strong>
+                                <small>Automatically block websites during specific times</small>
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="schedule-grid" id="scheduleGrid">
+                        <div class="schedule-row">
+                            <div class="schedule-day">Monday</div>
+                            <input type="time" class="schedule-time" data-day="monday" data-type="start" value="09:00">
+                            <span class="schedule-separator">to</span>
+                            <input type="time" class="schedule-time" data-day="monday" data-type="end" value="17:00">
+                            <label class="schedule-checkbox">
+                                <input type="checkbox" data-day="monday" class="day-checkbox">
+                                <span>Enable</span>
+                            </label>
+                        </div>
+                        
+                        <div class="schedule-row">
+                            <div class="schedule-day">Tuesday</div>
+                            <input type="time" class="schedule-time" data-day="tuesday" data-type="start" value="09:00">
+                            <span class="schedule-separator">to</span>
+                            <input type="time" class="schedule-time" data-day="tuesday" data-type="end" value="17:00">
+                            <label class="schedule-checkbox">
+                                <input type="checkbox" data-day="tuesday" class="day-checkbox">
+                                <span>Enable</span>
+                            </label>
+                        </div>
+                        
+                        <div class="schedule-row">
+                            <div class="schedule-day">Wednesday</div>
+                            <input type="time" class="schedule-time" data-day="wednesday" data-type="start" value="09:00">
+                            <span class="schedule-separator">to</span>
+                            <input type="time" class="schedule-time" data-day="wednesday" data-type="end" value="17:00">
+                            <label class="schedule-checkbox">
+                                <input type="checkbox" data-day="wednesday" class="day-checkbox">
+                                <span>Enable</span>
+                            </label>
+                        </div>
+                        
+                        <div class="schedule-row">
+                            <div class="schedule-day">Thursday</div>
+                            <input type="time" class="schedule-time" data-day="thursday" data-type="start" value="09:00">
+                            <span class="schedule-separator">to</span>
+                            <input type="time" class="schedule-time" data-day="thursday" data-type="end" value="17:00">
+                            <label class="schedule-checkbox">
+                                <input type="checkbox" data-day="thursday" class="day-checkbox">
+                                <span>Enable</span>
+                            </label>
+                        </div>
+                        
+                        <div class="schedule-row">
+                            <div class="schedule-day">Friday</div>
+                            <input type="time" class="schedule-time" data-day="friday" data-type="start" value="09:00">
+                            <span class="schedule-separator">to</span>
+                            <input type="time" class="schedule-time" data-day="friday" data-type="end" value="17:00">
+                            <label class="schedule-checkbox">
+                                <input type="checkbox" data-day="friday" class="day-checkbox">
+                                <span>Enable</span>
+                            </label>
+                        </div>
+                        
+                        <div class="schedule-row">
+                            <div class="schedule-day">Weekend</div>
+                            <input type="time" class="schedule-time" data-day="weekend" data-type="start" value="10:00">
+                            <span class="schedule-separator">to</span>
+                            <input type="time" class="schedule-time" data-day="weekend" data-type="end" value="18:00">
+                            <label class="schedule-checkbox">
+                                <input type="checkbox" data-day="weekend" class="day-checkbox">
+                                <span>Enable</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Block Settings -->
+            <section class="settings-section">
+                <h2>Quick Block Settings</h2>
+                <div class="setting-group">
+                    <div class="quick-block-grid">
+                        <div class="quick-block-item">
+                            <label class="setting-label">
+                                <input type="checkbox" id="quickBlock15" class="setting-checkbox">
+                                <span class="setting-text">
+                                    <strong>15 Minutes</strong>
+                                    <small>Quick focus session</small>
+                                </span>
+                            </label>
+                        </div>
+                        
+                        <div class="quick-block-item">
+                            <label class="setting-label">
+                                <input type="checkbox" id="quickBlock30" class="setting-checkbox">
+                                <span class="setting-text">
+                                    <strong>30 Minutes</strong>
+                                    <small>Short work session</small>
+                                </span>
+                            </label>
+                        </div>
+                        
+                        <div class="quick-block-item">
+                            <label class="setting-label">
+                                <input type="checkbox" id="quickBlock60" class="setting-checkbox">
+                                <span class="setting-text">
+                                    <strong>1 Hour</strong>
+                                    <small>Standard work session</small>
+                                </span>
+                            </label>
+                        </div>
+                        
+                        <div class="quick-block-item">
+                            <label class="setting-label">
+                                <input type="checkbox" id="quickBlock120" class="setting-checkbox">
+                                <span class="setting-text">
+                                    <strong>2 Hours</strong>
+                                    <small>Extended focus time</small>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Advanced Settings -->
+            <section class="settings-section">
+                <h2>Advanced Settings</h2>
+                <div class="setting-group">
+                    <div class="setting-item">
+                        <label class="setting-label">
+                            <input type="checkbox" id="strictMode" class="setting-checkbox">
+                            <span class="setting-text">
+                                <strong>Strict Mode</strong>
+                                <small>Block all subdomains and related sites</small>
+                            </span>
+                        </label>
+                    </div>
+                    
+                    <div class="setting-item">
+                        <label class="setting-label">
+                            <input type="checkbox" id="allowOverride" class="setting-checkbox">
+                            <span class="setting-text">
+                                <strong>Allow Manual Override</strong>
+                                <small>Let users temporarily bypass blocking</small>
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="setting-item">
+                        <label class="setting-label">
+                            <input type="checkbox" id="syncSettings" class="setting-checkbox">
+                            <span class="setting-text">
+                                <strong>Sync Across Devices</strong>
+                                <small>Use Chrome sync for settings</small>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Data Management -->
+            <section class="settings-section">
+                <h2>Data Management</h2>
+                <div class="setting-group">
+                    <div class="data-actions">
+                        <button id="exportSettings" class="btn btn-secondary">Export Settings</button>
+                        <button id="importSettings" class="btn btn-secondary">Import Settings</button>
+                        <input type="file" id="importFile" accept=".json" style="display: none;">
+                        <button id="resetSettings" class="btn btn-danger">Reset All Settings</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <button id="saveSettings" class="btn btn-primary btn-large">Save All Settings</button>
+                <div class="footer-links">
+                    <a href="https://github.com/vanjara/focus-guard" target="_blank">GitHub</a>
+                    <a href="https://vanjara.github.io/focus-guard/" target="_blank">Documentation</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="options.js"></script>
+</body>
+</html>
