@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FocusGuard Demo - Try the Extension</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="../icons/icon-48.png">
+    <style>
+        .demo-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .demo-card {
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .demo-simulator {
+            border: 2px solid #e2e8f0;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            background: #f8fafc;
+        }
+        
+        .demo-controls {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .demo-btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.25rem;
+            background: #1e40af;
+            color: white;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        
+        .demo-btn:hover {
+            background: #1d4ed8;
+        }
+        
+        .demo-btn.secondary {
+            background: #64748b;
+        }
+        
+        .demo-btn.secondary:hover {
+            background: #475569;
+        }
+        
+        .demo-status {
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+            font-weight: 500;
+        }
+        
+        .demo-status.blocked {
+            background: #fef2f2;
+            color: #dc2626;
+            border: 1px solid #fecaca;
+        }
+        
+        .demo-status.unblocked {
+            background: #f0fdf4;
+            color: #16a34a;
+            border: 1px solid #bbf7d0;
+        }
+        
+        .demo-websites {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .demo-website {
+            padding: 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .demo-website:hover {
+            border-color: #1e40af;
+            background: #f8fafc;
+        }
+        
+        .demo-website.blocked {
+            background: #fef2f2;
+            border-color: #dc2626;
+            color: #dc2626;
+        }
+        
+        .demo-website.unblocked {
+            background: #f0fdf4;
+            border-color: #16a34a;
+            color: #16a34a;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <img src="../icons/icon-48.png" alt="FocusGuard" class="nav-logo">
+                <h1>FocusGuard</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="demo.html">Demo</a></li>
+                <li><a href="https://github.com/vanjara/focus-guard" target="_blank">GitHub</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Try FocusGuard</h1>
+                <p class="hero-subtitle">Experience how the extension works with this interactive demo</p>
+            </div>
+        </section>
+
+        <div class="demo-container">
+            <div class="demo-card">
+                <h2>Extension Status</h2>
+                <div class="demo-simulator">
+                    <div class="demo-controls">
+                        <button class="demo-btn" onclick="toggleExtension()">Toggle Extension</button>
+                        <button class="demo-btn secondary" onclick="resetDemo()">Reset Demo</button>
+                    </div>
+                    <div id="extensionStatus" class="demo-status unblocked">
+                        Extension Status: Disabled
+                    </div>
+                </div>
+            </div>
+
+            <div class="demo-card">
+                <h2>Website Blocking Demo</h2>
+                <div class="demo-simulator">
+                    <p>Click on websites below to simulate blocking/unblocking:</p>
+                    <div class="demo-websites">
+                        <div class="demo-website unblocked" onclick="toggleWebsite(this, 'facebook')">
+                            <strong>Facebook</strong><br>
+                            <small>facebook.com</small>
+                        </div>
+                        <div class="demo-website unblocked" onclick="toggleWebsite(this, 'twitter')">
+                            <strong>Twitter</strong><br>
+                            <small>twitter.com</small>
+                        </div>
+                        <div class="demo-website unblocked" onclick="toggleWebsite(this, 'youtube')">
+                            <strong>YouTube</strong><br>
+                            <small>youtube.com</small>
+                        </div>
+                        <div class="demo-website unblocked" onclick="toggleWebsite(this, 'instagram')">
+                            <strong>Instagram</strong><br>
+                            <small>instagram.com</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="demo-card">
+                <h2>Quick Block Timer</h2>
+                <div class="demo-simulator">
+                    <div class="demo-controls">
+                        <button class="demo-btn" onclick="startQuickBlock(15)">15 min</button>
+                        <button class="demo-btn" onclick="startQuickBlock(30)">30 min</button>
+                        <button class="demo-btn" onclick="startQuickBlock(60)">1 hour</button>
+                        <button class="demo-btn" onclick="startQuickBlock(120)">2 hours</button>
+                    </div>
+                    <div id="quickBlockStatus" class="demo-status unblocked">
+                        Quick Block: Not Active
+                    </div>
+                    <div id="timerDisplay" style="text-align: center; font-size: 1.5rem; margin: 1rem 0;"></div>
+                </div>
+            </div>
+
+            <div class="demo-card">
+                <h2>Schedule Demo</h2>
+                <div class="demo-simulator">
+                    <p>Simulate time-based blocking:</p>
+                    <div class="demo-controls">
+                        <button class="demo-btn" onclick="setSchedule('work')">Work Hours (9 AM - 5 PM)</button>
+                        <button class="demo-btn" onclick="setSchedule('evening')">Evening (6 PM - 10 PM)</button>
+                        <button class="demo-btn secondary" onclick="clearSchedule()">Clear Schedule</button>
+                    </div>
+                    <div id="scheduleStatus" class="demo-status unblocked">
+                        Schedule: Not Set
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 FocusGuard. Built with ❤️ for productivity.</p>
+        <p><a href="https://github.com/vanjara/focus-guard" target="_blank">View on GitHub</a></p>
+    </footer>
+
+    <script>
+        let extensionEnabled = false;
+        let blockedWebsites = new Set();
+        let quickBlockEnd = null;
+        let scheduleActive = false;
+        let timerInterval = null;
+
+        function toggleExtension() {
+            extensionEnabled = !extensionEnabled;
+            updateExtensionStatus();
+        }
+
+        function updateExtensionStatus() {
+            const status = document.getElementById('extensionStatus');
+            if (extensionEnabled) {
+                status.className = 'demo-status blocked';
+                status.textContent = 'Extension Status: Enabled - Blocking Active';
+            } else {
+                status.className = 'demo-status unblocked';
+                status.textContent = 'Extension Status: Disabled';
+            }
+        }
+
+        function toggleWebsite(element, website) {
+            if (blockedWebsites.has(website)) {
+                blockedWebsites.delete(website);
+                element.className = 'demo-website unblocked';
+            } else {
+                blockedWebsites.add(website);
+                element.className = 'demo-website blocked';
+            }
+        }
+
+        function startQuickBlock(minutes) {
+            if (quickBlockEnd) {
+                clearInterval(timerInterval);
+            }
+            
+            quickBlockEnd = new Date(Date.now() + minutes * 60 * 1000);
+            updateQuickBlockStatus();
+            
+            timerInterval = setInterval(updateTimer, 1000);
+        }
+
+        function updateQuickBlockStatus() {
+            const status = document.getElementById('quickBlockStatus');
+            if (quickBlockEnd) {
+                status.className = 'demo-status blocked';
+                status.textContent = 'Quick Block: Active';
+            } else {
+                status.className = 'demo-status unblocked';
+                status.textContent = 'Quick Block: Not Active';
+            }
+        }
+
+        function updateTimer() {
+            if (!quickBlockEnd) return;
+            
+            const now = new Date();
+            const timeLeft = quickBlockEnd - now;
+            
+            if (timeLeft <= 0) {
+                quickBlockEnd = null;
+                clearInterval(timerInterval);
+                updateQuickBlockStatus();
+                document.getElementById('timerDisplay').textContent = '';
+                return;
+            }
+            
+            const minutes = Math.floor(timeLeft / 60000);
+            const seconds = Math.floor((timeLeft % 60000) / 1000);
+            document.getElementById('timerDisplay').textContent = 
+                `${minutes}:${seconds.toString().padStart(2, '0')} remaining`;
+        }
+
+        function setSchedule(type) {
+            scheduleActive = true;
+            updateScheduleStatus();
+        }
+
+        function clearSchedule() {
+            scheduleActive = false;
+            updateScheduleStatus();
+        }
+
+        function updateScheduleStatus() {
+            const status = document.getElementById('scheduleStatus');
+            if (scheduleActive) {
+                status.className = 'demo-status blocked';
+                status.textContent = 'Schedule: Active - Blocking Enabled';
+            } else {
+                status.className = 'demo-status unblocked';
+                status.textContent = 'Schedule: Not Set';
+            }
+        }
+
+        function resetDemo() {
+            extensionEnabled = false;
+            blockedWebsites.clear();
+            quickBlockEnd = null;
+            scheduleActive = false;
+            
+            if (timerInterval) {
+                clearInterval(timerInterval);
+                timerInterval = null;
+            }
+            
+            // Reset all website elements
+            document.querySelectorAll('.demo-website').forEach(el => {
+                el.className = 'demo-website unblocked';
+            });
+            
+            // Reset displays
+            document.getElementById('timerDisplay').textContent = '';
+            
+            // Update all status displays
+            updateExtensionStatus();
+            updateQuickBlockStatus();
+            updateScheduleStatus();
+        }
+    </script>
+</body>
+</html>

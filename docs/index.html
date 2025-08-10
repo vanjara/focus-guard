@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FocusGuard - Website Blocker Extension</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="../icons/icon-48.png">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <img src="../icons/icon-48.png" alt="FocusGuard" class="nav-logo">
+                <h1>FocusGuard</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#installation">Installation</a></li>
+                <li><a href="#usage">Usage</a></li>
+                <li><a href="#development">Development</a></li>
+                <li><a href="https://github.com/vanjara/focus-guard" target="_blank">GitHub</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">FocusGuard</h1>
+                <p class="hero-subtitle">Block distracting websites during focused work sessions</p>
+                <div class="hero-buttons">
+                    <a href="#installation" class="btn btn-primary">Get Started</a>
+                    <a href="demo.html" class="btn btn-secondary">Try Demo</a>
+                    <a href="https://github.com/vanjara/focus-guard" class="btn btn-secondary" target="_blank">View Source</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="../icons/icon-128.png" alt="FocusGuard Extension" class="extension-icon">
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <h2>Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Website Blocking</h3>
+                    <p>Block specific distracting websites like Facebook, Twitter, and YouTube</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⏰</div>
+                    <h3>Smart Scheduling</h3>
+                    <p>Set recurring time-based blocks for focused work hours</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Quick Block</h3>
+                    <p>Immediate blocking for 15 min, 30 min, 1 hour, or 2 hours</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Cross-Device Sync</h3>
+                    <p>Settings sync across all your devices using Chrome storage</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="installation" class="installation">
+            <h2>Installation</h2>
+            <div class="install-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Download</h3>
+                        <p>Download the latest release from GitHub or build from source</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Load Extension</h3>
+                        <p>Open Chrome extensions page and load the unpacked extension</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Configure</h3>
+                        <p>Add websites to block and set up your schedule</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="usage" class="usage">
+            <h2>How to Use</h2>
+            <div class="usage-content">
+                <div class="usage-item">
+                    <h3>Enable Blocking</h3>
+                    <p>Click the FocusGuard icon and toggle the main switch to enable website blocking</p>
+                </div>
+                <div class="usage-item">
+                    <h3>Add Websites</h3>
+                    <p>Click "+ Add" to block specific domains like "facebook.com" or "twitter.com"</p>
+                </div>
+                <div class="usage-item">
+                    <h3>Set Schedules</h3>
+                    <p>Create recurring blocks for specific times and days of the week</p>
+                </div>
+                <div class="usage-item">
+                    <h3>Quick Block</h3>
+                    <p>Use preset durations for immediate focus sessions</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="demo" class="demo">
+            <h2>Try It Out</h2>
+            <div class="demo-content">
+                <p>Experience FocusGuard in action with our interactive demo. See how website blocking, scheduling, and quick blocks work before installing the extension.</p>
+                <div class="demo-cta">
+                    <a href="demo.html" class="btn btn-primary">Launch Interactive Demo</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="development" class="development">
+            <h2>Development</h2>
+            <div class="dev-content">
+                <h3>Getting Started</h3>
+                <pre><code>git clone https://github.com/vanjara/focus-guard.git
+cd focus-guard
+npm install
+npm run dev</code></pre>
+                
+                <h3>Available Scripts</h3>
+                <ul>
+                    <li><code>npm run dev</code> - Start development server</li>
+                    <li><code>npm run build</code> - Build for production</li>
+                    <li><code>npm run test</code> - Run tests</li>
+                    <li><code>npm run lint</code> - Run linting</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 FocusGuard. Built with ❤️ for productivity.</p>
+        <p><a href="https://github.com/vanjara/focus-guard" target="_blank">View on GitHub</a></p>
+    </footer>
+</body>
+</html>
