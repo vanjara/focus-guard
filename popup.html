@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FocusGuard</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="title">
+                    <span class="icon">🛡️</span>
+                    FocusGuard
+                </h1>
+                <div class="toggle-container">
+                    <label class="toggle">
+                        <input type="checkbox" id="globalToggle">
+                        <span class="toggle-slider"></span>
+                    </label>
+                    <span class="toggle-label" id="toggleLabel">Disabled</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Status Section -->
+        <section class="status-section">
+            <div class="status-card" id="statusCard">
+                <div class="status-icon" id="statusIcon">⏸️</div>
+                <div class="status-content">
+                    <div class="status-text" id="statusText">Blocking Disabled</div>
+                    <div class="status-detail" id="statusDetail">Enable blocking to start</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Actions -->
+        <section class="quick-actions">
+            <h3>Quick Block</h3>
+            <div class="quick-buttons">
+                <button class="quick-btn" data-duration="15">15 min</button>
+                <button class="quick-btn" data-duration="30">30 min</button>
+                <button class="quick-btn" data-duration="60">1 hour</button>
+                <button class="quick-btn" data-duration="120">2 hours</button>
+            </div>
+        </section>
+
+        <!-- Website Management -->
+        <section class="websites-section">
+            <div class="section-header">
+                <h3>Blocked Websites</h3>
+                <button class="add-btn" id="addWebsiteBtn">+ Add</button>
+            </div>
+            
+            <div class="add-website-form" id="addWebsiteForm" style="display: none;">
+                <input type="text" id="websiteInput" placeholder="Enter website (e.g., facebook.com)" class="website-input">
+                <div class="form-buttons">
+                    <button class="save-btn" id="saveWebsiteBtn">Save</button>
+                    <button class="cancel-btn" id="cancelWebsiteBtn">Cancel</button>
+                </div>
+            </div>
+
+            <div class="websites-list" id="websitesList">
+                <div class="empty-state" id="emptyState">
+                    <div class="empty-icon">📝</div>
+                    <p>No websites added yet</p>
+                    <small>Click "Add" to start blocking websites</small>
+                </div>
+            </div>
+        </section>
+
+        <!-- Schedule Management -->
+        <section class="schedule-section">
+            <div class="section-header">
+                <h3>Recurring Schedules</h3>
+                <button class="add-btn" id="addScheduleBtn">+ Add</button>
+            </div>
+
+            <div class="add-schedule-form" id="addScheduleForm" style="display: none;">
+                <div class="form-row">
+                    <label>From:</label>
+                    <input type="time" id="scheduleStartTime" class="time-input">
+                </div>
+                <div class="form-row">
+                    <label>To:</label>
+                    <input type="time" id="scheduleEndTime" class="time-input">
+                </div>
+                <div class="form-row">
+                    <label>Days:</label>
+                    <div class="days-selector">
+                        <label class="day-checkbox">
+                            <input type="checkbox" value="1"> Mon
+                        </label>
+                        <label class="day-checkbox">
+                            <input type="checkbox" value="2"> Tue
+                        </label>
+                        <label class="day-checkbox">
+                            <input type="checkbox" value="3"> Wed
+                        </label>
+                        <label class="day-checkbox">
+                            <input type="checkbox" value="4"> Thu
+                        </label>
+                        <label class="day-checkbox">
+                            <input type="checkbox" value="5"> Fri
+                        </label>
+                        <label class="day-checkbox">
+                            <input type="checkbox" value="6"> Sat
+                        </label>
+                        <label class="day-checkbox">
+                            <input type="checkbox" value="0"> Sun
+                        </label>
+                    </div>
+                </div>
+                <div class="form-buttons">
+                    <button class="save-btn" id="saveScheduleBtn">Save</button>
+                    <button class="cancel-btn" id="cancelScheduleBtn">Cancel</button>
+                </div>
+            </div>
+
+            <div class="schedules-list" id="schedulesList">
+                <div class="empty-state" id="schedulesEmptyState">
+                    <div class="empty-icon">⏰</div>
+                    <p>No schedules created</p>
+                    <small>Set up recurring blocks for focused work</small>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
