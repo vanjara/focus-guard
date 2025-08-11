@@ -1,5 +1,28 @@
 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="24" cy="24" r="24" fill="#4F46E5"/>
-<circle cx="24" cy="24" r="12" fill="white"/>
-<circle cx="24" cy="24" r="6" fill="#10B981"/>
+  <!-- Shield background -->
+  <path d="M24 3 L42 12 L42 33 C42 39 36 45 24 45 C12 45 6 39 6 33 L6 12 Z" fill="#E5E7EB" stroke="#6B7280" stroke-width="1"/>
+  
+  <!-- Shield border with metallic effect -->
+  <path d="M24 3 L42 12 L42 33 C42 39 36 45 24 45 C12 45 6 39 6 33 L6 12 Z" fill="none" stroke="#9CA3AF" stroke-width="2"/>
+  
+  <!-- Left side (red) -->
+  <path d="M24 3 L24 45 L6 33 L6 12 Z" fill="#DC2626"/>
+  
+  <!-- Right side (white) -->
+  <path d="M24 3 L24 45 L42 33 L42 12 Z" fill="#FFFFFF"/>
+  
+  <!-- Zig-zag dividing line -->
+  <path d="M24 3 L18 9 L24 15 L18 21 L24 27 L18 33 L24 39 L24 45" stroke="#374151" stroke-width="1.5" fill="none"/>
+  
+  <!-- Shield rivets/studs along the border -->
+  <circle cx="24" cy="6" r="1" fill="#6B7280"/>
+  <circle cx="36" cy="12" r="1" fill="#6B7280"/>
+  <circle cx="42" cy="18" r="1" fill="#6B7280"/>
+  <circle cx="42" cy="27" r="1" fill="#6B7280"/>
+  <circle cx="36" cy="36" r="1" fill="#6B7280"/>
+  <circle cx="24" cy="42" r="1" fill="#6B7280"/>
+  <circle cx="12" cy="36" r="1" fill="#6B7280"/>
+  <circle cx="6" cy="27" r="1" fill="#6B7280"/>
+  <circle cx="6" cy="18" r="1" fill="#6B7280"/>
+  <circle cx="12" cy="12" r="1" fill="#6B7280"/>
 </svg>
