@@ -19,7 +19,7 @@ A Chrome browser extension that helps users block distracting websites during fo
 1. Clone this repository:
    ```bash
    git clone <your-repo-url>
-   cd focus-guard
+   cd focus-warden
    ```
 
 2. Install dependencies:
@@ -47,7 +47,7 @@ Download the `.crx` file from releases and drag it into Chrome's extensions page
 ### Project Structure
 
 ```
-focus-guard/
+focus-warden/
 ├── src/                    # React frontend (development)
 ├── background.js          # Extension service worker
 ├── content.js            # Content script for web pages
