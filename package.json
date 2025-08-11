@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "build:extension": "vite build && npm run copy-extension-files",
-    "copy-extension-files": "cp background.js content.js popup.js blocked.js popup.html blocked.html popup.css manifest.json rules.json icons/* dist/",
+    "copy-extension-files": "cp background.js content.js popup.js blocked.js popup.html blocked.html popup.css manifest.json rules.json dist/",
     "preview": "vite preview",
     "test": "vitest",
     "test:ui": "vitest --ui",
