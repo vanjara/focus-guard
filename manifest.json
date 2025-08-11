@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "FocusGuard - Website Blocker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Block distracting websites during focused work sessions with customizable time schedules.",
   "permissions": [
     "storage",
@@ -27,11 +27,17 @@
     "default_popup": "popup.html",
     "default_title": "FocusGuard",
     "default_icon": {
-      "16": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iOCIgY3k9IjgiIHI9IjgiIGZpbGw9IiM0RjQ2RTUiLz4KPGNpcmNsZSBjeD0iOCIgY3k9IjgiIHI9IjQiIGZpbGw9IndoaXRlIi8+CjxjaXJjbGUgY3g9IjgiIGN5PSI4IiByPSIyIiBmaWxsPSIjMTBCOTgxIi8+Cjwvc3ZnPgo="
+      "16": "icon-16.svg",
+      "32": "icon-32.svg",
+      "48": "icon-48.svg",
+      "128": "icon-128.svg"
     }
   },
   "icons": {
-    "16": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iOCIgY3k9IjgiIHI9IjgiIGZpbGw9IiM0RjQ2RTUiLz4KPGNpcmNsZSBjeD0iOCIgY3k9IjgiIHI9IjQiIGZpbGw9IndoaXRlIi8+CjxjaXJjbGUgY3g9IjgiIGN5PSI4IiByPSIyIiBmaWxsPSIjMTBCOTgxIi8+Cjwvc3ZnPgo="
+    "16": "icon-16.svg",
+    "32": "icon-32.svg",
+    "48": "icon-48.svg",
+    "128": "icon-128.svg"
   },
   "declarative_net_request": {
     "rule_resources": [
