@@ -1,8 +1,8 @@
-# FocusGuard - Website Blocker Extension 🚀
+# FocusWarden - Website Blocker Extension 🚀
 
 A Chrome browser extension that helps users block distracting websites during focused work sessions with customizable time schedules.
 
-*Testing CI/CD workflow and GitHub Pages deployment - Fixed workflow configuration*
+*Rebranded to FocusWarden - Version 1.0.0*
 
 ## Features
 

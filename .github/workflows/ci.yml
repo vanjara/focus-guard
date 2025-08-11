@@ -87,14 +87,14 @@ jobs:
         path: dist/
         retention-days: 30
     
-    # Temporarily disabled release creation due to permission issues
-    # - name: Create release
-    #   uses: softprops/action-gh-release@v1
-    #   with:
-    #     files: dist/*
-    #     tag_name: v${{ github.run_number }}
-    #     name: Release v${{ github.run_number }}
-    #     draft: false
-    #     prerelease: false
-    #   env:
-    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            # Release creation will be enabled after repository rename
+        # - name: Create release
+        #   uses: softprops/action-gh-release@v1
+        #   with:
+        #     files: dist/*
+        #     tag_name: v${{ github.run_number }}
+        #     name: Release v${{ github.run_number }}
+        #     draft: false
+        #     prerelease: false
+        #   env:
+        #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
