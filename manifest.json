@@ -6,7 +6,9 @@
   "permissions": [
     "storage",
     "declarativeNetRequest",
-    "alarms"
+    "tabs",
+    "alarms",
+    "activeTab"
   ],
   "host_permissions": [
     "<all_urls>"
